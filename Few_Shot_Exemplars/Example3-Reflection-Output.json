@@ -1,0 +1,12 @@
+{
+  "selected_strategy": "Reflection",
+  "primary_focus": [
+    "explain why reversing works here",
+    "consider how the solution would behave on edge cases"
+  ],
+  "message_to_student": "Your solution is clear and correct. A good next step is to make sure you can explain why this method works, not just use it. Why does comparing the normalized string to its reversed version fully capture the idea of a palindrome? Also, what do you expect your function to return for very short inputs, such as an empty string or a one-character string, and why? If you can justify those cases clearly, that shows strong understanding rather than just a correct final answer.",
+  "teacher_note": {
+    "based_on": ["indicator_diagnosis", "stage2_guardrails"],
+    "response_goal": "Deepen understanding through self-explanation and edge-case reflection"
+  }
+}

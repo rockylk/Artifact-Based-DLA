@@ -1,0 +1,82 @@
+{
+  "task_metadata": {
+    "task_type": "iterative_programming",
+    "language": "python",
+    "concept_focus": ["loop traversal", "conditional checking", "specification matching"]
+  },
+  "task_validity": {
+    "is_valid_attempt": true,
+    "has_executable_structure": true,
+    "notes": []
+  },
+  "submission_summary": {
+    "high_level_description": "The student iterates through the string and increments a counter when a character is recognized as a vowel.",
+    "observed_strengths": [
+      "Uses a loop to inspect each character",
+      "Uses a counter correctly",
+      "Returns an integer result"
+    ],
+    "observed_issues": [
+      "The condition only checks lowercase vowels",
+      "The implementation does not fully match the task specification"
+    ]
+  },
+  "indicator_diagnosis": [
+    {
+      "indicator": "input_traversal",
+      "dimension": "mechanics",
+      "status": "Correct",
+      "severity": "Low",
+      "evidence": "The loop visits each character in the string.",
+      "instructional_implication": "Traversal logic is sound."
+    },
+    {
+      "indicator": "count_update_logic",
+      "dimension": "mechanics",
+      "status": "Correct",
+      "severity": "Low",
+      "evidence": "The counter increases when a vowel is detected.",
+      "instructional_implication": "Update mechanism is appropriate."
+    },
+    {
+      "indicator": "condition_spec_alignment",
+      "dimension": "meaning",
+      "status": "Partial",
+      "severity": "Medium",
+      "evidence": "The condition checks only 'aeiou' and omits uppercase vowels required by the prompt.",
+      "instructional_implication": "Student understands the main idea but has not fully aligned the condition with the specification."
+    },
+    {
+      "indicator": "task_completion_alignment",
+      "dimension": "functional_outcome",
+      "status": "Partial",
+      "severity": "Medium",
+      "evidence": "The code works for lowercase-only strings but fails for inputs such as 'ApplE'.",
+      "instructional_implication": "Behavior is mostly correct but not fully robust against all required cases."
+    }
+  ],
+  "dimension_summary": {
+    "mechanics": "Core iteration and counting mechanics are correct.",
+    "meaning": "The conditional logic partially reflects the specification.",
+    "functional_outcome": "The function succeeds on some valid inputs but misses required uppercase cases."
+  },
+  "dominant_issues": [
+    {
+      "issue": "The vowel-checking condition does not yet cover all required input cases.",
+      "related_indicators": ["condition_spec_alignment", "task_completion_alignment"],
+      "diagnostic_priority": 1
+    }
+  ],
+  "recommended_support_level": "Medium",
+  "diagnostic_confidence": "High",
+  "stage2_guardrails": {
+    "focus_targets": [
+      "Inspect the vowel-checking condition",
+      "Compare behavior on lowercase and uppercase examples"
+    ],
+    "avoid": [
+      "Do not provide the corrected condition directly",
+      "Do not rewrite the student's code"
+    ]
+  }
+}

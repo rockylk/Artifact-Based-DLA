@@ -1,0 +1,72 @@
+{
+  "task_id": "W07_REC_03",
+  "task_title": "Recursive Directory Size Calculator",
+  "task_description": "Write a recursive function that traverses a nested file directory and returns a dictionary of file sizes.",
+  "task_requirements": [
+    "Use recursion",
+    "Handle the base case correctly",
+    "Return a dictionary mapping file paths to file sizes",
+    "Do not hardcode file names",
+    "Program must pass all visible tests"
+  ],
+  "target_SOLO_level": "Relational",
+  "qmatrix_targets": {
+    "valid_dimensions": ["SU", "AR", "DS", "MR"],
+    "primary_indicators": [
+      "syntax_correctness",
+      "function_declaration_syntax",
+      "recursion_logic",
+      "problem_decomposition",
+      "runtime_error_identification",
+      "compile_error_resolution",
+      "progressive_refinement_strategy"
+    ],
+    "secondary_indicators": [
+      "reflection_comment_depth",
+      "post_execution_reflection"
+    ],
+    "not_measured_dimensions_if_absent_evidence": [
+      "forum_help_requests"
+    ]
+  },
+  "student_code": "def get_sizes(path):\n    if path == []:\n        return 0\n    for item in path:\n        return get_sizes(item)\n",
+  "compiler_trace": "",
+  "runtime_trace": "TypeError: expected dict, got int",
+  "test_results": {
+    "passed": 1,
+    "failed": 4,
+    "visible_failures": [
+      "Returns int instead of dict",
+      "Does not aggregate recursive results",
+      "Incorrect base case output"
+    ]
+  },
+  "submission_history": [
+    {
+      "submission_id": "s1",
+      "timestamp": "2024-10-02T14:00:00",
+      "summary": "initial recursive attempt"
+    },
+    {
+      "submission_id": "s2",
+      "timestamp": "2024-10-02T14:08:00",
+      "summary": "changed base case"
+    }
+  ],
+  "revision_diff": "Changed base case return from {} to 0. No change to recursive aggregation logic.",
+  "student_reflection": "I think recursion is working but the output format still seems wrong.",
+  "forum_activity": "",
+  "time_since_last_submission": 480,
+  "prior_indicator_states": {
+    "recursion_logic": "Partial",
+    "problem_decomposition": "Partial",
+    "syntax_correctness": "Correct"
+  },
+  "current_focus_dimension": "AR",
+  "language": "Python",
+  "course_phase": "Phase 3: Modularity",
+  "support_history": {
+    "previous_support_level": "Medium",
+    "times_same_indicator_flagged": 2
+  }
+}

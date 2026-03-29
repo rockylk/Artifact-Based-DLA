@@ -1,0 +1,12 @@
+{
+  "selected_strategy": "Coaching",
+  "primary_focus": [
+    "inspect the vowel-checking condition",
+    "test the function on uppercase examples"
+  ],
+  "message_to_student": "Your loop and counting logic are working well, so this looks like a small but important specification check rather than a full redesign. Look closely at the condition that decides whether a character is a vowel. Then test your function on a short example that includes uppercase letters, such as a word with one uppercase vowel at the beginning or end. Compare what the task requires with what your condition currently recognizes. After that, revise just the condition and rerun the same example to see whether the result now matches the prompt more consistently.",
+  "teacher_note": {
+    "based_on": ["dominant_issues", "indicator_diagnosis"],
+    "response_goal": "Help the student localize a specification mismatch without supplying the fix"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "selected_strategy": "Modeling",
+  "primary_focus": [
+    "combine results from all parts of the input",
+    "avoid stopping after the nested first element"
+  ],
+  "message_to_student": "You’ve already set up an important part of the recursive idea: a base case and a way to inspect the first element. The main thing to revisit now is the overall structure for combining results. In this kind of problem, handling the first part is only half of the job—the function also needs to keep processing the rest of the list and combine both contributions into one total. A less productive pattern is to return the result of the nested first element by itself, because that stops the computation too early. A more useful pattern is: handle the first part, handle the remaining part, and combine those results into one final value. As your next step, check the branch where the first element is a list and ask yourself whether the rest of the list is still being included in the final result.",
+  "teacher_note": {
+    "based_on": ["dominant_issues", "indicator_diagnosis"],
+    "response_goal": "Rebuild the student's structural understanding of recursive result composition"
+  }
+}

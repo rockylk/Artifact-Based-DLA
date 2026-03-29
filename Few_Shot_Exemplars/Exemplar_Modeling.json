@@ -1,0 +1,82 @@
+{
+  "task_metadata": {
+    "task_type": "recursive_programming",
+    "language": "python",
+    "concept_focus": ["recursion", "list decomposition", "result composition"]
+  },
+  "task_validity": {
+    "is_valid_attempt": true,
+    "has_executable_structure": true,
+    "notes": []
+  },
+  "submission_summary": {
+    "high_level_description": "The student attempts a recursive decomposition over the list and handles an empty list as the base case.",
+    "observed_strengths": [
+      "Uses recursion rather than iteration",
+      "Includes a base case for the empty list",
+      "Recognizes that nested lists need recursive handling"
+    ],
+    "observed_issues": [
+      "When the first element is a list, the remaining elements are ignored",
+      "The recursive structure does not combine all parts of the input"
+    ]
+  },
+  "indicator_diagnosis": [
+    {
+      "indicator": "base_case_presence",
+      "dimension": "mechanics",
+      "status": "Correct",
+      "severity": "Low",
+      "evidence": "The function returns 0 for an empty list.",
+      "instructional_implication": "Base case exists and is appropriate."
+    },
+    {
+      "indicator": "recursive_decomposition",
+      "dimension": "mechanics",
+      "status": "Correct",
+      "severity": "Low",
+      "evidence": "The student decomposes the problem by inspecting the first element and recurring on smaller structure.",
+      "instructional_implication": "Student recognizes recursive breakdown."
+    },
+    {
+      "indicator": "result_composition",
+      "dimension": "meaning",
+      "status": "Incorrect",
+      "severity": "High",
+      "evidence": "If lst[0] is a list, the function returns sum_nested(lst[0]) without including sum_nested(lst[1:]).",
+      "instructional_implication": "Student does not yet preserve the structure needed to combine all sub-results."
+    },
+    {
+      "indicator": "task_completion_alignment",
+      "dimension": "functional_outcome",
+      "status": "Incorrect",
+      "severity": "High",
+      "evidence": "The code fails on inputs where a nested list is followed by additional elements, such as [1, [2, 3], 4].",
+      "instructional_implication": "The function does not reliably compute the sum of the full nested list."
+    }
+  ],
+  "dimension_summary": {
+    "mechanics": "Student demonstrates core recursive mechanics.",
+    "meaning": "Student's composition logic is structurally incomplete.",
+    "functional_outcome": "Program does not satisfy the task for all valid inputs."
+  },
+  "dominant_issues": [
+    {
+      "issue": "The function processes a nested first element but drops the rest of the list.",
+      "related_indicators": ["result_composition", "task_completion_alignment"],
+      "diagnostic_priority": 1
+    }
+  ],
+  "recommended_support_level": "High",
+  "diagnostic_confidence": "High",
+  "stage2_guardrails": {
+    "focus_targets": [
+      "Combining recursive results across all parts of the input",
+      "Avoiding early return that discards remaining elements"
+    ],
+    "avoid": [
+      "Do not provide full corrected code",
+      "Do not reveal the exact finished implementation"
+    ]
+  }
+}
