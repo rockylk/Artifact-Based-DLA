@@ -11,14 +11,24 @@ As presented in our manuscript, this framework utilizes a rubric-constrained Lar
 To maintain a strict boundary between diagnostic reasoning and pedagogical intervention, the LLM agent is governed by a **Dual-Stage Prompting Architecture**:
 
 * 📂 **`System_Prompts/`**
-  * `Stage1_Internal_Diagnosis.md`: The Chain-of-Thought (CoT) system prompt forcing the agent to execute a hidden internal analysis and output a structured JSON diagnostic profile (Indicator, Status, Root Cause) before generating any visible feedback.
-  * `Stage2_Adaptive_Scaffolding.md`: The pedagogical system prompt that translates the JSON diagnosis into natural language feedback using the Modeling-Coaching-Reflection (MCR) strategy gradient.
+* `Global System Configuration.md`: Defines the foundational persona, context variables, and absolute negative constraints (guardrails) for the AI agent.
+* `Stage1_Internal_Diagnosis.md`: The Chain-of-Thought (CoT) system prompt forcing the agent to execute a hidden internal analysis before generating any visible feedback.
+* `Routing Logic.md`: The conditional logic rules determining how the system transitions between different support levels based on the diagnostic status.
+* `Stage2_Adaptive_Scaffolding.md`: The pedagogical prompt that translates the diagnosis into natural language feedback using the Modeling-Coaching-Reflection (MCR) strategy.
 * 📂 **`Knowledge_Base/`**
   * `Evaluative_Knowledge_Base.md`: The absolute "ground truth" injected into the LLM. It strictly defines the 29 observable indicators across 4 dimensions (SU, AR, DS, MR) and the proficiency level progression (Deficit, Emerging, Consolidated). The LLM is strictly constrained to infer states *only* from behavioral traces (e.g., source code, runtime traces, submission intervals).
 * 📂 **`Few_Shot_Exemplars/`**
-  * `Exemplar_Modeling.md`: Example of a High-Support intervention.
-  * `Exemplar_Coaching.md`: Example of a Medium-Support (localization hint) intervention.
-  * `Exemplar_Reflection.md`: Example of a Low-Support (Socratic questioning) intervention.
+ These JSON files provide the structured data formats and concrete examples required for in-context learning:
+* `Recommended Input Schema Template.json`: The standard structured format for feeding student artifacts (code, compiler traces, etc.) into the model.
+* **Modeling (High Support):**
+  * `Exemplar_Modeling.json`: Input example for a fundamental error.
+  * `Example1-Modeling-Output.json`: The expected Stage 1 & Stage 2 outputs demonstrating abstract structural modeling.
+* **Coaching (Medium Support):**
+  * `Exemplar_Coaching.json`: Input example for a partial logic error.
+  * `Example2-coaching-Output.json`: The expected outputs demonstrating localization hints.
+* **Reflection (Low Support):**
+  * `Exemplar_Reflection.json`: Input example for a functionally correct but unoptimized artifact.
+  * `Example3-Reflection-Output.json`: The expected outputs initiating Socratic questioning.
 
 ## Core Dimensions Addressed
 The evaluative knowledge base constraints the LLM to diagnose across four cognitive dimensions:
