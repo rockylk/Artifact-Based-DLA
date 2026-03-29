@@ -52,7 +52,7 @@ Researchers and educators can replicate this diagnostic pipeline by integrating 
 ## Citation
 If you utilize this prompt architecture or the evaluative knowledge base in your research, please cite our corresponding paper:
 
-> [Kai liang]. (2026). Artifact-Based Diagnostic Learning Analytics via Large Language Models: A Case Study in Programming Classroom. *Educational Technology Research and Development (ETR&D)*. [Status: Under Review].
+> (2026). Artifact-Based Diagnostic Learning Analytics via Large Language Models: A Case Study in Programming Classroom. *Educational Technology Research and Development (ETR&D)*. [Status: Under Review].
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
